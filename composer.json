@@ -4,6 +4,7 @@
   },
   "scripts": {
     "shell": "psysh",
-    "day1": "php ./day01/index.php"
+    "day1": "php ./day01/index.php",
+    "day2": "php ./day02/index.php"
   }
 }
