@@ -1,0 +1,9 @@
+{
+  "require": {
+    "psy/psysh": "@stable"
+  },
+  "scripts": {
+    "shell": "psysh",
+    "day1": "php ./day01/index.php"
+  }
+}
