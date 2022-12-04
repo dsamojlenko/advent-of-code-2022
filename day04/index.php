@@ -10,7 +10,7 @@ $overlappingSections = array_filter($inputs, function($section) {
     $section1 = range($section[0][0], $section[0][1]);
     $section2 = range($section[1][0], $section[1][1]);
     $overlap = array_intersect($section1, $section2);
-    if(count($overlap) === count($section1) || count($overlap) === count($section2)) {
+    if(in_array(count($overlap), [count($section1), count($section2)])) {
         return true;
     }
 });
