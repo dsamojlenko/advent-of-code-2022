@@ -6,6 +6,7 @@
     "shell": "psysh",
     "day1": "php ./day01/index.php",
     "day2": "php ./day02/index.php",
-    "day3": "php ./day03/index.php"
+    "day3": "php ./day03/index.php",
+    "day4": "php ./day04/index.php"
   }
 }
