@@ -1,6 +1,6 @@
 <?php
 
-$inputs = explode("\n", file_get_contents(__DIR__ . '/inputs'));
+$inputs = explode("\n", file_get_contents(__DIR__ . '/input'));
 
 $totalPoints = 0;
 

@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const inputs = fs
-  .readFileSync(path.resolve(__dirname, "./inputs"), "utf-8")
+  .readFileSync(path.resolve(__dirname, "./input"), "utf-8")
   .split("\n");
 
 const points = {
