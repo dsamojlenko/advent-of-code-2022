@@ -1,11 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 
-const inputs = fs.readFileSync(path.resolve(__dirname, './inputs'), 'utf-8').replace(/\n/g, ' ').split('  ');
+const inputs = fs
+  .readFileSync(path.resolve(__dirname, "./input"), "utf-8")
+  .replace(/\n/g, " ")
+  .split("  ");
 
-const sums = inputs.map(input => {
-    const numbers = input.split(' ').map(Number);
-    return numbers.reduce((a, b) => a + b, 0);
+const sums = inputs.map((input) => {
+  const numbers = input.split(" ").map(Number);
+  return numbers.reduce((a, b) => a + b, 0);
 });
 
 console.log(Math.max(...sums));

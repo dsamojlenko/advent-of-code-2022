@@ -1,6 +1,6 @@
 import os
 
-with open(os.path.join(os.path.dirname(__file__), 'inputs'), 'r') as file:
+with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as file:
     inputs = file.read().replace('\n', ' ').split('  ');
 
 def addemup(group):

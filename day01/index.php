@@ -2,7 +2,7 @@
 
 $sums = array_map(function($group) {
     return array_sum(explode("\n", $group));
-}, explode("\n\n", file_get_contents(__DIR__ . '/inputs')));
+}, explode("\n\n", file_get_contents(__DIR__ . '/input')));
 
 // Part 1
 echo max($sums) . "\n";
