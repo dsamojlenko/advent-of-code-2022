@@ -8,7 +8,10 @@
       "php ./day01/index.php",
       "node ./day01/index.js"
     ],
-    "day2": "php ./day02/index.php",
+    "day2": [
+      "php ./day02/index.php",
+      "node ./day02/index.js"
+    ],
     "day3": "php ./day03/index.php",
     "day4": "php ./day04/index.php"
   }
