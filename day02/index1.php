@@ -1,8 +1,5 @@
 <?php
 
-print "================================\n";
-print "Attempt 1: \n";
-
 $inputs = explode("\n", file_get_contents(__DIR__ . '/inputs'));
 
 $inputs = array_map(function($match) {

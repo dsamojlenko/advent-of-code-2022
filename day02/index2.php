@@ -1,8 +1,5 @@
 <?php
 
-print "================================\n";
-print "Attempt 2: \n";
-
 $inputs = explode("\n", file_get_contents(__DIR__ . '/inputs'));
 
 $totalPoints = 0;
