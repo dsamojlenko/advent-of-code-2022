@@ -1,0 +1,19 @@
+{
+  "name": "advent-of-code-2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "day1": "node ./day01/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsamojlenko/advent-of-code-2022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsamojlenko/advent-of-code-2022/issues"
+  },
+  "homepage": "https://github.com/dsamojlenko/advent-of-code-2022#readme"
+}
