@@ -4,7 +4,7 @@ $inputs = array_map(function($sections) {
     return array_map(function($section) {
         return explode("-", $section);
     }, explode(",", $sections));
-}, explode("\n", file_get_contents(__DIR__ . '/inputs')));
+}, explode("\n", file_get_contents(__DIR__ . '/input')));
 
 $overlappingSections = array_filter($inputs, function($section) {
     $section1 = range($section[0][0], $section[0][1]);
