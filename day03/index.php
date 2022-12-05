@@ -1,6 +1,6 @@
 <?php
 
-$inputs = explode("\n", file_get_contents(__DIR__ . '/inputs'));
+$inputs = explode("\n", file_get_contents(__DIR__ . '/input'));
 
 $alphabet = array_merge(range('a', 'z'), range('A', 'Z'));
 
@@ -16,7 +16,7 @@ $priorities = array_map(function($rucksack) use ($alphabet) {
 print array_sum($priorities) . PHP_EOL;
 
 // Part 2
-$inputs = array_chunk(explode("\n", file_get_contents(__DIR__ . '/inputs')), 3);
+$inputs = array_chunk(explode("\n", file_get_contents(__DIR__ . '/input')), 3);
 
 $priorities = array_map(function($group) use ($alphabet) {
     $badges = array_values(array_intersect(...array_map(function($rucksack) {
