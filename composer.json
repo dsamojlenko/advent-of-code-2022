@@ -6,7 +6,8 @@
     "shell": "psysh",
     "day1": [
       "php ./day01/index.php",
-      "node ./day01/index.js"
+      "node ./day01/index.js",
+      "python3 ./day01/index.py"
     ],
     "day2": [
       "php ./day02/index.php",
