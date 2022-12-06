@@ -17,7 +17,8 @@
     "day4": "php ./day04/index.php",
     "day5": [
       "php ./day05/index.php",
-      "php ./day05/index2.php"
+      "php ./day05/index2.php",
+      "php ./day05/index3.php"
     ]
   }
 }
