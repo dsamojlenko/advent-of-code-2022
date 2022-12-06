@@ -5,11 +5,11 @@ $input = explode("\n\n", file_get_contents(__DIR__ . '/input'));
 $stacks = $input[0];
 $moves = $input[1];
 
-$reversed = array_reverse(explode("\n", $stacks));
+$stacks = array_reverse(explode("\n", $stacks));
 
 $stackArray = [];
 
-foreach($reversed as $index => $crates)
+foreach($stacks as $index => $crates)
 {
     if($index < 1) continue;
 
@@ -20,7 +20,7 @@ foreach($reversed as $index => $crates)
 
 $columns = [];
 
-for ($i = 0; $i < 9; $i++) {
+for ($i = 0; $i < count($stacks); $i++) {
     array_push($columns, array_filter(array_column($stackArray, $i)));
 }
 
@@ -49,7 +49,7 @@ print PHP_EOL;
 // Part 2
 $columns = [];
 
-for ($i = 0; $i < 9; $i++) {
+for ($i = 0; $i < count($stacks); $i++) {
     array_push($columns, array_filter(array_column($stackArray, $i)));
 }
 
