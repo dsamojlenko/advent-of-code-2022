@@ -19,6 +19,9 @@
       "php ./day05/index.php",
       "php ./day05/index2.php",
       "php ./day05/index3.php"
+    ],
+    "day6": [
+      "php ./day06/index.php"
     ]
   }
 }
