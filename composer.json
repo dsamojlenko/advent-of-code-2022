@@ -21,7 +21,8 @@
       "php ./day05/index3.php"
     ],
     "day6": [
-      "php ./day06/index.php"
+      "php ./day06/index.php",
+      "node ./day06/index.js"
     ]
   }
 }
