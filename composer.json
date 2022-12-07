@@ -24,6 +24,14 @@
       "php ./day06/index.php",
       "node ./day06/index.js",
       "cargo run --manifest-path day06/rust/Cargo.toml"
+    ],
+    "all": [
+      "composer day1",
+      "composer day2",
+      "composer day3",
+      "composer day4",
+      "composer day5",
+      "composer day6"
     ]
   }
 }
