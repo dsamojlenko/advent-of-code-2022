@@ -2,9 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$input = file_get_contents(__DIR__ . '/test');
-
-print $input;
+$input = file_get_contents(__DIR__ . '/input');
 
 $forest = array_map(function($row) {
     return str_split($row);
@@ -56,7 +54,7 @@ foreach($forest as $y => $treeRow) {
     }
 }
 
-print "\n VisibleTrees: $visibleTrees \n";
+print "Part 1: $visibleTrees \n";
 
 // Part 2
 
@@ -70,40 +68,44 @@ foreach($forest as $y => $treeRow) {
         $leftVisibility = 0;
         $leftTrees = array_reverse(array_slice($treeRow, 0, $x));
         foreach ($leftTrees as $check) {
-            if ($check <= $tree) {
+            if($check >= $tree) {
                 $leftVisibility++;
-                continue;
+                break;
             }
+            $leftVisibility++;
         }
 
         // Look right
         $rightVisibility = 0;
         $rightTrees = array_slice($treeRow, $x + 1, count($treeRow) -1);
         foreach($rightTrees as $check) {
-            if ($check <= $tree) {
+            if($check >= $tree) {
                 $rightVisibility++;
-                continue;
+                break;
             }
+            $rightVisibility++;
         }
 
         // Look up
         $upVisibility = 0;
         $upTrees = array_reverse(array_slice($treeColumn, 0, $y));
         foreach($upTrees as $check) {
-            if ($check <= $tree) {
+            if($check >= $tree) {
                 $upVisibility++;
-                continue;
+                break;
             }
+            $upVisibility++;
         }
 
         // Look down
         $downVisibility = 0;
         $downTrees = array_slice($treeColumn, $y+1, count($treeColumn));
         foreach($downTrees as $check) {
-            if ($check <= $tree) {
+            if($check >= $tree) {
                 $downVisibility++;
-                continue;
+                break;
             }
+            $downVisibility++;
         }
 
         $scenicScore = $leftVisibility * $rightVisibility * $upVisibility * $downVisibility;
@@ -113,5 +115,4 @@ foreach($forest as $y => $treeRow) {
     }
 }
 
-print max($scenicScores);
-// print_r($max_keys);
+print "Part 2: " . max($scenicScores);
