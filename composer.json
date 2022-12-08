@@ -28,6 +28,9 @@
     "day7": [
       "php ./day07/index.php"
     ],
+    "day8": [
+      "php ./day08/index.php"
+    ],
     "all": [
       "composer day1",
       "composer day2",
