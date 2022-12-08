@@ -4,35 +4,23 @@ $input = explode("\n", file_get_contents(__DIR__ . '/input'));
 
 $filesystem = [];
 $here = ["root"];
-$totalUsedSpace = 0;
-
-function cd($arg) {
-    global $filesystem;
-    global $here;
-
-    if($arg === "/") {
-        $here = ["root"];
-        return;
-    }
-
-    if($arg === "..") {
-        array_pop($here);
-        return;
-    }
-
-    array_push($here, $arg);
-}
 
 foreach($input as $line) {
-    $cmd = explode(' ', $line);
-    if ($cmd[0] === '$') {
-        $lastCmd = $cmd[1];
-        if ($cmd[1] === 'cd') {
-            cd($cmd[2]);
+    list($start, $cmd, $dir) = array_pad(explode(' ', $line), 3, null);
+    if ($start === '$') {
+        $lastCmd = $cmd;
+        if ($cmd === 'cd') {
+            if ($dir === "/") {
+                $here = ["root"];
+            } elseif ($dir === "..") {
+                array_pop($here);
+            } else {
+                array_push($here, $dir);
+            }
         }
     } else {
-        if($cmd[0] !== 'dir') {
-            array_push($filesystem, implode('/', $here) . '/' . $cmd[0]);
+        if($start !== 'dir') {
+            array_push($filesystem, implode('/', $here) . '/' . $start);
         }
     }
 }
@@ -42,15 +30,13 @@ $totals = [];
 foreach ($filesystem as $path) {
     $savePath = '';
     $path = explode('/', $path);
-    if(is_numeric(end($path))) {
-        foreach ($path as $segment) {
-            $savePath = $savePath . '/' . $segment;
-            if (!is_numeric($segment)) {
-                if(array_key_exists($savePath, $totals)) {
-                    $totals[$savePath] += end($path);
-                } else {
-                    $totals[$savePath] = end($path);
-                }
+    foreach ($path as $segment) {
+        $savePath = $savePath . '/' . $segment;
+        if (!is_numeric($segment)) {
+            if(array_key_exists($savePath, $totals)) {
+                $totals[$savePath] += end($path);
+            } else {
+                $totals[$savePath] = end($path);
             }
         }
     }
