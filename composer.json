@@ -4,6 +4,7 @@
   },
   "scripts": {
     "shell": "psysh",
+    "aoc": "php ./scripts/cli.php",
     "day1": [
       "php ./day01/index.php",
       "node ./day01/index.js",
