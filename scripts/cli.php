@@ -20,8 +20,23 @@ if ($argv[1] === 'new') {
 }
 
 if ($argv[1] === 'run') {
-    $day = readline("Day: ");
+    if (isset($argv[2])) {
+        $day = $argv[2];
+    }
+
+    if (!isset($day)) {
+        $day = readline("Day: ");
+    }
+
+    if (!is_numeric($day)) {
+        die("Day must be a number" . PHP_EOL);
+    }
+
     $day = sprintf("%02d", $day);
+
+    if (!is_dir(__DIR__ . "/../day$day")) {
+        die("Day $day does not exist" . PHP_EOL);
+    }
     
     $output = shell_exec("php " . __DIR__ . "/../day$day/index.php");
 
